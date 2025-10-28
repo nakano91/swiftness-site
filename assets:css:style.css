@@ -1,6 +1,6 @@
 /* ================================
    Swiftness Inc. Corporate Site
-   style.css（レイアウト修正版）
+   style.css（最適化版）
 ================================ */
 
 :root {
@@ -76,12 +76,12 @@ nav a:hover {
 /* --- Hero --- */
 .hero {
   position: relative;
-  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 70px; /* ← ヘッダー分の余白を確保 */
+  height: 90vh;
+  margin-top: 70px; /* ヘッダー高さ分の余白 */
   overflow: hidden;
 }
 
@@ -99,7 +99,7 @@ nav a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 120, 201, 0.4), rgba(0, 120, 201, 0.4));
+  background: linear-gradient(rgba(0, 160, 233, 0.3), rgba(0, 120, 201, 0.5));
   z-index: 0;
 }
 
@@ -139,18 +139,10 @@ nav a:hover {
   text-align: center;
 }
 
-.section img {
-  width: 100%;
-  max-width: 900px;
-  margin: 40px auto 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-}
-
 .section h2 {
   font-size: 2.2rem;
   color: var(--main-blue);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .section p {
@@ -159,16 +151,42 @@ nav a:hover {
   margin: 0 auto;
 }
 
+/* --- 横並びレイアウト --- */
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.section .content {
+  flex: 1 1 400px;
+  padding: 0 20px;
+}
+
+.section img {
+  flex: 1 1 400px;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
 /* --- Works --- */
 .bg-light {
   background-color: var(--light-blue);
+  flex-direction: column;
 }
 
 .section-title {
-  text-align: center;
   font-size: 2rem;
   color: var(--text-color);
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .section-title span {
@@ -187,6 +205,10 @@ nav a:hover {
 }
 
 /* --- About --- */
+#about {
+  flex-direction: column;
+}
+
 #about p {
   max-width: 800px;
   margin: 0 auto;
@@ -197,6 +219,7 @@ nav a:hover {
 
 /* --- Contact --- */
 .contact-section {
+  flex-direction: column;
   background: linear-gradient(135deg, var(--main-blue), var(--accent-blue));
   color: var(--white);
   text-align: center;
@@ -231,13 +254,13 @@ nav a:hover {
 
 /* --- レスポンシブ --- */
 @media (max-width: 768px) {
+  .section {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 80px 0;
+  }
+
   .hero-text h1 {
     font-size: 2rem;
-  }
-  nav ul {
-    gap: 16px;
-  }
-  .section {
-    padding: 80px 0;
   }
 }
