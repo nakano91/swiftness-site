@@ -8,17 +8,17 @@
 </head>
 <body>
 <header>
-  <div class="container header-container">
-    <img src="assets/img/logo.png" alt="Swiftness" class="logo">
-    <nav>
-      <ul>
-        <li><a href="#works">WORKS</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </nav>
-  </div>
+  <h1 class="logo"><a href="/">Swiftness</a></h1>
+  <span class="menu-toggle">☰</span>
+  <nav>
+    <ul>
+      <li><a href="#works">WORKS</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
 </header>
+
 
   <section id="hero" class="hero">
     <img src="assets/img/hero.png" alt="Heroセクション背景" class="hero-bg" />
@@ -85,6 +85,17 @@
       <p>© 2025 Swiftness Inc. All rights reserved.</p>
     </div>
   </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.querySelector(".menu-toggle");
+  const navMenu = document.querySelector("nav ul");
+  toggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+});
+</script>
+
 
 </body>
 </html>
