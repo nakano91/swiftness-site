@@ -80,15 +80,18 @@ nav a:hover {
   }
 }
 
-/* === Heroセクション（最終安定版） === */
+/* === Heroセクション（構造安定版） === */
 .hero {
   position: relative;
   text-align: center;
   color: #fff;
   overflow: hidden;
   height: 100vh;
+  min-height: 600px; /* 小画面でも高さを確保 */
+  display: block;
 }
 
+/* 背景画像 */
 .hero-bg {
   position: absolute;
   top: 0;
@@ -100,7 +103,7 @@ nav a:hover {
   z-index: 0;
 }
 
-/* グラデーションオーバーレイ */
+/* 背景グラデーション */
 .hero::before {
   content: "";
   position: absolute;
@@ -116,7 +119,15 @@ nav a:hover {
   z-index: 1;
 }
 
-/* テキスト中央固定配置 */
+/* Hero後の空間保持（高さを認識させる） */
+.hero::after {
+  content: "";
+  display: block;
+  height: 100vh;
+  visibility: hidden;
+}
+
+/* テキスト中央固定 */
 .hero-text {
   position: absolute;
   top: 50%;
@@ -128,6 +139,7 @@ nav a:hover {
   animation: fadeIn 1.2s ease both;
 }
 
+/* 見出し・テキスト */
 .hero h1 {
   font-size: 2.4rem;
   font-weight: 700;
@@ -147,7 +159,12 @@ nav a:hover {
 
 @media (max-width: 768px) {
   .hero {
-    height: 85vh; /* モバイルでちょうどよく */
+    height: 85vh;
+    min-height: 500px;
+  }
+
+  .hero::after {
+    height: 85vh;
   }
 
   .hero h1 {
@@ -159,7 +176,6 @@ nav a:hover {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
 
 .btn {
   display: inline-block;
