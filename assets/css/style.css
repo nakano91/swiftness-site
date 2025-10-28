@@ -1,183 +1,269 @@
-/* =======================================
-   Base Styles (PC共通)
-======================================= */
+/* ================================
+   Swiftness Inc. Corporate Site
+   style.css（余白最小・安定版 2025-10）
+================================ */
 
+:root {
+  --main-blue: #00A0E9;
+  --accent-blue: #0078C9;
+  --light-blue: #EAF7FC;
+  --text-color: #222;
+  --white: #fff;
+  --font-jp: "Noto Sans JP", "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* --- Base --- */
 body {
   margin: 0;
-  font-family: "Noto Sans JP", sans-serif;
-  color: #222;
-  line-height: 1.8;
+  font-family: var(--font-jp);
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: var(--white);
+  scroll-behavior: smooth;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: min(92%, 1100px);
+  margin: 0 auto;
+}
+
+/* --- Header --- */
 header {
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
-  width: 100%;
-  background: #fff;
   z-index: 1000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 16px 40px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  justify-content: space-between;
+  padding: 8px 5%;
+  box-sizing: border-box;
 }
 
-header img {
-  height: 36px;
+.logo img {
+  height: 34px;
 }
 
-nav {
+nav ul {
   display: flex;
-  gap: 32px;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
+  color: var(--text-color);
   text-decoration: none;
-  color: #222;
   font-weight: 600;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: var(--main-blue);
 }
 
+/* --- Hero --- */
 .hero {
-  background: linear-gradient(135deg, #3fa9f5, #69c3f9);
-  color: #fff;
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 200px 16px 160px;
+  overflow: hidden;
+  margin-top: 60px; /* ヘッダー分の余白 */
 }
 
-.hero h1 {
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,160,233,0.25), rgba(0,120,201,0.5));
+  z-index: -1;
+}
+
+.hero-text {
+  color: var(--white);
+  padding: 0 16px;
+}
+.hero-text h1 {
   font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+.hero-text p {
+  font-size: 1rem;
   margin-bottom: 20px;
 }
 
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 32px;
-}
-
-.hero button {
-  background: #3298f5;
-  border: none;
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
+.btn {
+  display: inline-block;
+  background: var(--main-blue);
+  color: var(--white);
+  padding: 10px 26px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
   transition: 0.3s;
 }
-
-.hero button:hover {
-  background: #1f82e6;
+.btn:hover {
+  background: var(--accent-blue);
 }
 
-/* =======================================
-   Section Layout
-======================================= */
-
+/* --- Section --- */
 .section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 100px 20px;
-  text-align: center;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.section .content {
+  flex: 1 1 400px;
+  max-width: 460px;
 }
 
 .section h2 {
-  color: #39a1e0;
   font-size: 1.8rem;
-  margin-bottom: 16px;
+  color: var(--main-blue);
+  margin-bottom: 8px;
 }
-
 .section p {
-  margin-bottom: 20px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.7;
 }
 
 .section img {
-  max-width: 85%;
-  height: auto;
-  display: block;
-  margin: 20px auto 0;
+  flex: 0 0 380px;
+  max-width: 380px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* =======================================
-   Footer
-======================================= */
-footer {
+/* --- Works --- */
+.bg-light {
+  background-color: var(--light-blue);
   text-align: center;
-  padding: 60px 20px;
-  background: #f7f7f7;
-  color: #555;
-  font-size: 0.9rem;
+  flex-direction: column;
+}
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+.center-text {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
 }
 
-/* =======================================
-   Mobile (SP) Styles
-======================================= */
+/* --- About --- */
+#about {
+  text-align: center;
+  flex-direction: column;
+}
+#about p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- Contact --- */
+.contact-section {
+  background: linear-gradient(135deg, var(--main-blue), var(--accent-blue));
+  color: var(--white);
+  text-align: center;
+  flex-direction: column;
+}
+.btn-light {
+  display: inline-block;
+  background: var(--white);
+  color: var(--main-blue);
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn-light:hover {
+  background: #f5faff;
+}
+
+/* --- Footer --- */
+.footer {
+  background: #f8f9fa;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* =============================
+   Responsive
+============================= */
 @media (max-width: 768px) {
 
-  /* --- ヘッダーを半分の高さに --- */
   header {
     padding: 6px 16px;
   }
-
-  header img {
-    height: 26px;
+  .logo img {
+    height: 28px;
   }
 
-  nav {
-    display: none; /* ハンバーガー開閉制御想定 */
-  }
-
-  .menu-toggle {
-    position: absolute;
-    right: 16px;
-    top: 12px;
-    font-size: 26px;
-  }
-
-  /* --- ヒーローセクション縮小 --- */
-  .hero {
-    padding: 120px 16px 80px;
-  }
-
-  .hero h1 {
-    font-size: 1.6rem;
-    margin-bottom: 12px;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-  }
-
-  /* --- セクション全体をコンパクトに --- */
   .section {
+    flex-direction: column;
+    text-align: center;
     padding: 40px 0;
-  }
-
-  .section h2 {
-    font-size: 1.4rem;
-    margin-bottom: 6px;
-  }
-
-  .section p {
-    margin-bottom: 2px; /* ← テキストと画像の間の余白ほぼゼロ */
-    line-height: 1.6;
+    gap: 20px;
   }
 
   .section img {
-    margin-top: 0;  /* ← ここで詰める */
-    margin-bottom: 10px;
-    max-width: 90%;
+    max-width: 80%;
+    margin: 0 auto;
   }
 
-  /* WORKSやABOUTも少し詰める */
-  .section + .section {
-    padding-top: 24px;
+  .hero {
+    height: 60vh;
   }
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+}
 
-  /* フッターも軽く調整 */
-  footer {
-    padding: 40px 10px;
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  .hero-text p {
     font-size: 0.85rem;
+  }
+  .section {
+    padding: 32px 0;
   }
 }
