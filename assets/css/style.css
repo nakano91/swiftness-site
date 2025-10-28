@@ -1,6 +1,6 @@
 /* ================================
    Swiftness Inc. Corporate Site
-   style.css（画像調整＆整列安定版）
+   style.css（完全安定版 / 2025）
 ================================ */
 
 :root {
@@ -12,18 +12,14 @@
   --font-jp: "Noto Sans JP", "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
+/* --- Base --- */
 body {
   margin: 0;
   font-family: var(--font-jp);
   color: var(--text-color);
   line-height: 1.7;
   background-color: var(--white);
-}
-
-/* --- 共通 --- */
-.container {
-  width: min(90%, 1100px);
-  margin: 0 auto;
+  scroll-behavior: smooth;
 }
 
 img {
@@ -32,7 +28,12 @@ img {
   display: block;
 }
 
-/* --- ヘッダー --- */
+.container {
+  width: min(90%, 1100px);
+  margin: 0 auto;
+}
+
+/* --- Header --- */
 header {
   background: var(--white);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -41,17 +42,15 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-}
-
-.header-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
+  justify-content: space-between;
+  padding: 10px 5%;
 }
 
-.logo {
-  height: 36px;
+.logo img {
+  height: 38px;
+  width: auto;
 }
 
 nav ul {
@@ -73,45 +72,53 @@ nav a:hover {
   color: var(--main-blue);
 }
 
+/* ハンバーガーメニュー */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: var(--accent-blue);
+  cursor: pointer;
+}
+
 /* --- Hero --- */
 .hero {
   position: relative;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 85vh;
-  margin-top: 70px; /* ヘッダー高さ分の余白 */
   overflow: hidden;
+  margin-top: 70px;
 }
 
 .hero-bg {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -2;
 }
 
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 160, 233, 0.25), rgba(0, 120, 201, 0.5));
-  z-index: 0;
+  background: linear-gradient(rgba(0,160,233,0.25), rgba(0,120,201,0.55));
+  z-index: -1;
 }
 
 .hero-text {
-  z-index: 1;
   color: var(--white);
+  z-index: 1;
   padding: 0 20px;
 }
 
 .hero-text h1 {
   font-size: 2.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-weight: 700;
 }
 
 .hero-text p {
@@ -133,7 +140,7 @@ nav a:hover {
   background: var(--accent-blue);
 }
 
-/* --- 各セクション --- */
+/* --- Sections --- */
 .section {
   padding: 100px 0;
   display: flex;
@@ -248,91 +255,86 @@ nav a:hover {
   color: #666;
 }
 
-/* --- レスポンシブ --- */
-@media (max-width: 768px) {
-  .section {
-    flex-direction: column !important;
-    text-align: center;
-    padding: 80px 0;
-  }
-
-  .section img {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-
-  .section .content {
-    text-align: center;
-  }
-
+/* =============================
+   Responsive
+============================= */
+@media (max-width: 1024px) {
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
   }
 }
 
-/* ===== モバイルデザイン最適化 ===== */
-@media screen and (max-width: 768px) {
-
-  /* ヘッダー */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 16px;
-  }
-
+@media (max-width: 768px) {
+  /* Header */
   nav ul {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 64px;
     right: 0;
     width: 100%;
     background-color: #fff;
     text-align: center;
     border-top: 1px solid #eee;
   }
-
   nav ul.show {
     display: flex;
   }
-
   nav li {
     padding: 12px 0;
   }
-
-  /* ハンバーガーメニュー */
   .menu-toggle {
     display: block;
-    cursor: pointer;
-    font-size: 24px;
-    color: #007acc;
   }
 
-  /* 画像・セクション調整 */
-  section {
-    padding: 24px 12px;
+  /* Sections */
+  .section {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 80px 0;
+    gap: 32px;
   }
 
-  section img {
+  .section img {
     max-width: 90%;
-    height: auto;
-    display: block;
-    margin: 0 auto 16px auto;
+    margin: 0 auto;
   }
 
-  h2, h3 {
-    font-size: 1.2rem;
+  .section .content {
     text-align: center;
   }
 
-  p {
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 10px 24px;
     font-size: 0.9rem;
-    line-height: 1.6;
   }
 
   footer {
     padding: 32px 12px;
     font-size: 0.8rem;
+  }
+}
+
+/* --- Extra small devices --- */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  .hero-text p {
+    font-size: 0.85rem;
   }
 }
