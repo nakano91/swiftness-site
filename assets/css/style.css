@@ -1,4 +1,4 @@
-/* === 全体リセット === */
+/* === リセット === */
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +25,6 @@ header {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(6px);
   z-index: 1000;
-  transition: background 0.3s ease;
 }
 
 .logo img {
@@ -80,18 +79,18 @@ nav a:hover {
   }
 }
 
-/* === Heroセクション（構造安定版） === */
+/* === Hero === */
 .hero {
   position: relative;
   text-align: center;
   color: #fff;
   overflow: hidden;
   height: 100vh;
-  min-height: 600px; /* 小画面でも高さを確保 */
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* 背景画像 */
 .hero-bg {
   position: absolute;
   top: 0;
@@ -103,9 +102,8 @@ nav a:hover {
   z-index: 0;
 }
 
-/* 背景グラデーション */
-.hero::before {
-  content: "";
+/* オーバーレイ */
+.hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -113,33 +111,20 @@ nav a:hover {
   height: 100%;
   background: linear-gradient(
     to bottom right,
-    rgba(30, 136, 229, 0.6),
-    rgba(66, 165, 245, 0.4)
+    rgba(30,136,229,0.6),
+    rgba(66,165,245,0.4)
   );
   z-index: 1;
 }
 
-/* Hero後の空間保持（高さを認識させる） */
-.hero::after {
-  content: "";
-  display: block;
-  height: 100vh;
-  visibility: hidden;
-}
-
-/* テキスト中央固定 */
+/* テキスト */
 .hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   z-index: 2;
-  text-align: center;
   max-width: 90%;
-  animation: fadeIn 1.2s ease both;
+  animation: fadeIn 1s ease both;
 }
 
-/* 見出し・テキスト */
 .hero h1 {
   font-size: 2.4rem;
   font-weight: 700;
@@ -155,28 +140,10 @@ nav a:hover {
 .hero p {
   font-size: 1rem;
   margin-bottom: 20px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 
-@media (max-width: 768px) {
-  .hero {
-    height: 85vh;
-    min-height: 500px;
-  }
-
-  .hero::after {
-    height: 85vh;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
+/* ボタン */
 .btn {
   display: inline-block;
   background: #42a5f5;
@@ -195,34 +162,28 @@ nav a:hover {
   box-shadow: 0 6px 16px rgba(30,136,229,0.4);
 }
 
-/* === アニメーション === */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -30%);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%);
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
   }
 }
 
-/* === 共通セクション === */
+/* === フェードアニメ === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === セクション共通 === */
 .section {
   max-width: 960px;
   margin: 0 auto;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 60px 20px;
   text-align: center;
-  animation: fadeInUp 1s ease both;
 }
 
-/* 2枚目の余白を詰める */
 .section.tight {
-  padding-top: 24px;
-  padding-bottom: 40px;
+  padding-top: 40px;
 }
 
 .section img {
@@ -233,7 +194,7 @@ nav a:hover {
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* === タイトルなど === */
+/* === タイトル === */
 .section h2 {
   color: #42a5f5;
   font-size: 1.8rem;
@@ -244,30 +205,11 @@ nav a:hover {
 .section p {
   font-size: 1rem;
   max-width: 700px;
+  margin: 0 auto;
 }
 
-/* === WORKS / ABOUT / CONTACT === */
 .bg-light {
   background: linear-gradient(to bottom, #f7fbff 0%, #ffffff 100%);
-  border-top: 1px solid #e3f2fd;
-  border-bottom: 1px solid #e3f2fd;
-}
-
-.section-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #42a5f5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.section-title span {
-  font-size: 0.9rem;
-  color: #777;
 }
 
 /* === フッター === */
@@ -277,5 +219,4 @@ nav a:hover {
   padding: 20px;
   font-size: 0.9rem;
   color: #444;
-  box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
 }
