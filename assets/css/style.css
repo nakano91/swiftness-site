@@ -366,3 +366,44 @@ nav a:hover {
     font-size: 0.85rem;
   }
 }
+
+@media (max-width: 768px) {
+  /* --- Header (縮小) --- */
+  header {
+    padding: 6px 16px; /* ← 高さを半分程度に */
+  }
+
+  .logo img {
+    height: 28px; /* ← ロゴも少し小さく */
+  }
+
+  .menu-toggle {
+    top: 10px;
+    right: 16px;
+    font-size: 24px;
+  }
+
+  /* --- Section spacing (余白調整) --- */
+  .section {
+    padding: 50px 0; /* ← 80px → 50px に短縮 */
+    gap: 20px;
+  }
+
+  .section .content {
+    margin-bottom: 0; /* テキスト下の余白削減 */
+  }
+
+  .section img {
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 75%; /* 少しだけ小さく */
+  }
+
+  .section h2 {
+    margin-bottom: 8px; /* 見出し下の余白を圧縮 */
+  }
+
+  .section p {
+    margin-bottom: 10px;
+  }
+}
