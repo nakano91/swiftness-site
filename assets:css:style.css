@@ -1,0 +1,242 @@
+/* ================================
+   Swiftness Inc. Corporate Site
+   style.css  (最新版)
+================================ */
+
+/* ---- ベース設定 ---- */
+:root {
+  --main-blue: #00A0E9;
+  --accent-blue: #0078C9;
+  --light-blue: #EAF7FC;
+  --text-color: #222;
+  --white: #fff;
+  --font-jp: "Noto Sans JP", "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-jp);
+  color: var(--text-color);
+  line-height: 1.7;
+  background-color: var(--white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: min(90%, 1100px);
+  margin: 0 auto;
+}
+
+/* ---- ヘッダー ---- */
+header {
+  background: var(--white);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+}
+
+.logo {
+  height: 38px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--main-blue);
+}
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,120,201,0.4), rgba(0,120,201,0.4));
+  z-index: 0;
+}
+
+.hero-text {
+  z-index: 1;
+  color: var(--white);
+  padding: 0 20px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--main-blue);
+  color: var(--white);
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: var(--accent-blue);
+}
+
+/* ---- セクション共通 ---- */
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section img {
+  width: 100%;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  color: var(--main-blue);
+  margin-bottom: 16px;
+}
+
+.section p {
+  font-size: 1rem;
+  max-width: 720px;
+}
+
+/* ---- Works ---- */
+.bg-light {
+  background-color: var(--light-blue);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.section-title span {
+  display: block;
+  font-size: 1rem;
+  color: var(--main-blue);
+  margin-top: 6px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.center-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+/* ---- About ---- */
+#about p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ---- Contact ---- */
+.contact-section {
+  background: linear-gradient(135deg, var(--main-blue), var(--accent-blue));
+  color: var(--white);
+  text-align: center;
+}
+
+.section-title.light span {
+  color: var(--white);
+}
+
+.btn-light {
+  display: inline-block;
+  background: var(--white);
+  color: var(--main-blue);
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn-light:hover {
+  background: #f5faff;
+}
+
+/* ---- Footer ---- */
+.footer {
+  background: #f8f9fa;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ---- レスポンシブ ---- */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  nav ul {
+    gap: 16px;
+  }
+  .section {
+    padding: 80px 0;
+  }
+}

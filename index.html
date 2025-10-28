@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swiftness Inc. | データで、ビジネスを前へ。</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiftness Inc.</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-inner">
-     <img src="assets/img/logo.png" alt="Swiftness Logo" class="logo">
+  <header>
+    <div class="container header-container">
+      <img src="assets/img/logo.png" alt="Swiftnessロゴ" class="logo" />
       <nav>
-        <ul class="nav">
-          <li><a href="#service">SERVICE</a></li>
-          <li><a href="#works">WORKS</a></li>
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#contact">CONTACT</a></li>
+        <ul>
+          <li><a href="#analytics">Analytics</a></li>
+          <li><a href="#strategy">Strategy</a></li>
+          <li><a href="#crm">CRM</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>データで、ビジネスを前へ。</h1>
-      <p>Swiftnessは、中小企業のマーケティングとデータ分析を支援します。</p>
+  <section id="hero" class="hero">
+    <img src="assets/img/hero.png" alt="Heroセクション背景" class="hero-bg" />
+    <div class="hero-text">
+      <h1>データで導く、次の一手。</h1>
+      <p>マーケティングとテクノロジーを融合し、ビジネスを加速させる。</p>
       <a href="#contact" class="btn">お問い合わせ</a>
     </div>
   </section>
 
-  <!-- Services -->
-  <section id="service" class="section">
-    <div class="container">
-      <h2 class="section-title">SERVICE<span>サービス内容</span></h2>
-      <div class="service-list">
-        <div class="service-item">
-          <img src="assets/img/analytics.jpg" alt="Analytics">
-          <h3>データ分析基盤の構築</h3>
-          <p>GA4やBigQueryなどを活用した分析環境を構築し、意思決定を支えるデータ活用を推進します。</p>
-        </div>
-        <div class="service-item">
-          <img src="assets/img/strategy.jpg" alt="Marketing Strategy">
-          <h3>マーケティング戦略設計</h3>
-          <p>KPI設計から施策評価まで、データドリブンな戦略立案で成果を最大化します。</p>
-        </div>
-        <div class="service-item">
-          <img src="assets/img/crm.jpg" alt="CRM Support">
-          <h3>CRM・LTV改善支援</h3>
-          <p>顧客データ分析やロイヤル顧客施策により、継続率・LTVの向上をサポートします。</p>
-        </div>
-      </div>
+  <section id="analytics" class="section">
+    <div class="content">
+      <h2>Analytics</h2>
+      <p>データ分析を通して課題を明確化し、成果を最大化する戦略を提案します。</p>
     </div>
+    <img src="assets/img/analytics.png" alt="Analyticsセクション背景" />
+  </section>
+
+  <section id="strategy" class="section">
+    <div class="content">
+      <h2>Strategy</h2>
+      <p>市場環境に応じた最適な戦略設計を行い、持続的な成長を実現します。</p>
+    </div>
+    <img src="assets/img/strategy.png" alt="Strategyセクション背景" />
+  </section>
+
+  <section id="crm" class="section">
+    <div class="content">
+      <h2>CRM</h2>
+      <p>顧客との関係を深めることで、LTV最大化を支援します。</p>
+    </div>
+    <img src="assets/img/crm.png" alt="CRMセクション背景" />
   </section>
 
   <!-- Works -->
