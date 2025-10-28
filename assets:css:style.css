@@ -1,6 +1,6 @@
 /* ================================
    Swiftness Inc. Corporate Site
-   style.css（最適化版）
+   style.css（画像調整＆整列安定版）
 ================================ */
 
 :root {
@@ -80,7 +80,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 90vh;
+  height: 85vh;
   margin-top: 70px; /* ヘッダー高さ分の余白 */
   overflow: hidden;
 }
@@ -99,7 +99,7 @@ nav a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 160, 233, 0.3), rgba(0, 120, 201, 0.5));
+  background: linear-gradient(rgba(0, 160, 233, 0.25), rgba(0, 120, 201, 0.5));
   z-index: 0;
 }
 
@@ -136,28 +136,11 @@ nav a:hover {
 /* --- 各セクション --- */
 .section {
   padding: 100px 0;
-  text-align: center;
-}
-
-.section h2 {
-  font-size: 2.2rem;
-  color: var(--main-blue);
-  margin-bottom: 16px;
-}
-
-.section p {
-  font-size: 1rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* --- 横並びレイアウト --- */
-.section {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
 .section:nth-child(even) {
@@ -166,19 +149,33 @@ nav a:hover {
 
 .section .content {
   flex: 1 1 400px;
-  padding: 0 20px;
+  max-width: 480px;
+  text-align: left;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  color: var(--main-blue);
+  margin-bottom: 12px;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.8;
 }
 
 .section img {
-  flex: 1 1 400px;
-  max-width: 500px;
-  border-radius: 8px;
+  flex: 0 0 420px;
+  max-width: 420px;
+  border-radius: 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 /* --- Works --- */
 .bg-light {
   background-color: var(--light-blue);
+  text-align: center;
   flex-direction: column;
 }
 
@@ -186,7 +183,6 @@ nav a:hover {
   font-size: 2rem;
   color: var(--text-color);
   margin-bottom: 10px;
-  text-align: center;
 }
 
 .section-title span {
@@ -206,23 +202,23 @@ nav a:hover {
 
 /* --- About --- */
 #about {
+  text-align: center;
   flex-direction: column;
 }
 
 #about p {
   max-width: 800px;
   margin: 0 auto;
-  text-align: center;
   font-size: 1.05rem;
   line-height: 1.8;
 }
 
 /* --- Contact --- */
 .contact-section {
-  flex-direction: column;
   background: linear-gradient(135deg, var(--main-blue), var(--accent-blue));
   color: var(--white);
   text-align: center;
+  flex-direction: column;
 }
 
 .section-title.light span {
@@ -258,6 +254,15 @@ nav a:hover {
     flex-direction: column !important;
     text-align: center;
     padding: 80px 0;
+  }
+
+  .section img {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .section .content {
+    text-align: center;
   }
 
   .hero-text h1 {
