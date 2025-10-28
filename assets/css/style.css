@@ -1,6 +1,6 @@
 /* ================================
    Swiftness Inc. Corporate Site
-   style.css（完全安定版 / 2025）
+   style.css（完全安定版 / 2025-10）
 ================================ */
 
 :root {
@@ -45,7 +45,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 5%;
+  padding: 12px 6%;
+  box-sizing: border-box;
 }
 
 .logo img {
@@ -75,9 +76,12 @@ nav a:hover {
 /* ハンバーガーメニュー */
 .menu-toggle {
   display: none;
-  font-size: 26px;
+  font-size: 28px;
   color: var(--accent-blue);
   cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 22px;
 }
 
 /* --- Hero --- */
@@ -268,7 +272,19 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
-  /* Header */
+
+  /* --- Header --- */
+  header {
+    padding: 10px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+  }
+
   nav ul {
     display: none;
     flex-direction: column;
@@ -279,34 +295,46 @@ nav a:hover {
     background-color: #fff;
     text-align: center;
     border-top: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   }
+
   nav ul.show {
     display: flex;
   }
+
   nav li {
     padding: 12px 0;
   }
-  .menu-toggle {
-    display: block;
-  }
 
-  /* Sections */
+  /* --- Section layout --- */
   .section {
     flex-direction: column !important;
     text-align: center;
-    padding: 80px 0;
-    gap: 32px;
-  }
-
-  .section img {
-    max-width: 90%;
-    margin: 0 auto;
+    padding: 60px 0;
+    gap: 24px;
   }
 
   .section .content {
     text-align: center;
   }
 
+  /* --- Analytics / Strategy / CRM 画像縮小と余白調整 --- */
+  .section img {
+    max-width: 80%;
+    margin: 0 auto 10px;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  .section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  /* --- Hero --- */
   .hero {
     height: 70vh;
   }
