@@ -80,16 +80,13 @@ nav a:hover {
   }
 }
 
-/* === Heroセクション === */
+/* === Heroセクション（最終安定版） === */
 .hero {
   position: relative;
   text-align: center;
   color: #fff;
   overflow: hidden;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .hero-bg {
@@ -103,7 +100,7 @@ nav a:hover {
   z-index: 0;
 }
 
-/* 背景オーバーレイ */
+/* グラデーションオーバーレイ */
 .hero::before {
   content: "";
   position: absolute;
@@ -119,12 +116,16 @@ nav a:hover {
   z-index: 1;
 }
 
-/* テキスト中央配置 */
+/* テキスト中央固定配置 */
 .hero-text {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
+  text-align: center;
   max-width: 90%;
-  animation: fadeIn 1.2s ease both; /* ← 修正：フェードのみ */
+  animation: fadeIn 1.2s ease both;
 }
 
 .hero h1 {
@@ -139,9 +140,14 @@ nav a:hover {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
   .hero {
-    height: 80vh;
+    height: 85vh; /* モバイルでちょうどよく */
   }
 
   .hero h1 {
@@ -149,19 +155,11 @@ nav a:hover {
   }
 }
 
-#analytics {
-  margin-top: 40px;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* フェードイン（位置移動なし） */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
 .btn {
   display: inline-block;
