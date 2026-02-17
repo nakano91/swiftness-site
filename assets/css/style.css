@@ -402,10 +402,19 @@ nav a:hover { opacity: .6; }
   max-width: 380px;
 }
 
-.section-alt .section-img img {
+.section-alt .section-img img,
+.section-alt .section-img svg {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0,0,0,.1);
+}
+
+.service-illust {
+  transition: transform 0.4s ease;
+}
+
+.service-illust:hover {
+  transform: scale(1.03);
 }
 
 .section-alt.reverse {
