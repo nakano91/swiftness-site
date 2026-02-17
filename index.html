@@ -3,25 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Swiftness Inc.</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
-<link rel="manifest" href="/favicon/site.webmanifest">
-<link rel="shortcut icon" href="/favicon/favicon.ico">
+  <title>Swiftness Inc. | エンタメ×データマーケティング</title>
+  <meta name="description" content="アニメ・エンタメ業界に特化したデータドリブンマーケティング。SNS戦略、商品企画、CRM設計で、優れたコンテンツを適切な顧客層へ届けます。" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <!-- ===== ヘッダー ===== -->
+  <!-- ===== Header ===== -->
   <header>
-    <h1 class="logo">
+    <div class="logo">
       <a href="/">
         <img src="assets/img/logo.png" alt="Swiftness Logo" />
       </a>
-    </h1>
+    </div>
     <span class="menu-toggle">☰</span>
     <nav>
       <ul>
+        <li><a href="#services">SERVICES</a></li>
         <li><a href="#works">WORKS</a></li>
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#contact">CONTACT</a></li>
@@ -31,88 +36,218 @@
 
 <!-- ===== Hero ===== -->
 <section class="hero">
-  <div class="hero-text fade-up">
-    <h1>データで導く、<br>次の一手。</h1>
-    <p>マーケティングとテクノロジーを融合し、ビジネスを加速させる。</p><br>
+  <div class="hero-particles">
+    <div class="hero-particle"></div>
+    <div class="hero-particle"></div>
+    <div class="hero-particle"></div>
+    <div class="hero-particle"></div>
+    <div class="hero-particle"></div>
+    <div class="hero-particle"></div>
+    <div class="hero-particle"></div>
+  </div>
+  <div class="hero-text">
+    <h1>優れたコンテンツを、<br>適切な顧客層へ。</h1>
+    <p>アニメ・エンタメ業界に特化したデータドリブンマーケティング</p><br>
     <a href="#contact" class="btn">お問い合わせ</a>
   </div>
 </section>
 
-<!-- ===== Analytics ===== -->
-<section id="analytics" class="section">
-  <h2 class="section-title fade-up">Data Analytics<span>データ分析</span></h2>
- <p class="fade-up fade-delay-1">
-  Looker Studio・Tableau・QuickSightを用いたダッシュボード構築により、
-  売上・集客・顧客行動を可視化し、意思決定のスピードと精度を高めます。
-</p>
-  <img src="assets/img/analytics.png" class="fade-up fade-delay-2" />
+<!-- ===== Services ===== -->
+<div id="services">
+
+<!-- SNS Marketing -->
+<section class="section-alt">
+  <div class="section-content">
+    <h2 class="section-title anim-fade-left">SNS Marketing<span>SNSマーケティング</span></h2>
+    <p class="anim-fade-left delay-1">
+      アニメ・エンタメIPのSNSマーケティング戦略を策定・実行。<br>
+      X（Twitter）やLINEを活用したファン向けコミュニティ運営と、
+      コンテンツマーケティングによるエンゲージメント最大化を支援します。
+    </p>
+  </div>
+  <div class="section-img">
+    <img src="assets/img/analytics.png" alt="SNSマーケティング" class="anim-scale-in delay-2" />
+  </div>
 </section>
 
-<!-- ===== Strategy ===== -->
-<section id="strategy" class="section">
-  <h2 class="section-title fade-up">Strategy<span>マーケティング戦略</span></h2>
- <p class="fade-up fade-delay-1">
-  ダッシュボードで得られたデータをもとに、
-  集客・導線・商品設計までを含めた実行可能なマーケティング戦略を設計します。
-</p>
-
-  <img src="assets/img/strategy.png" class="fade-up fade-delay-2" />
+<!-- Product Planning -->
+<section class="section-alt reverse">
+  <div class="section-content">
+    <h2 class="section-title anim-fade-right">Product Planning<span>商品企画・プロデュース</span></h2>
+    <p class="anim-fade-right delay-1">
+      アニメ・キャラクター商品の企画からプロデュース・ディレクションまで一貫して対応。<br>
+      IPコラボレーション戦略やファングッズ開発を通じて、コンテンツの価値を最大化します。
+    </p>
+  </div>
+  <div class="section-img">
+    <img src="assets/img/strategy.png" alt="商品企画・プロデュース" class="anim-scale-in delay-2" />
+  </div>
 </section>
 
-<!-- ===== CRM ===== -->
-<section id="crm" class="section">
-  <h2 class="section-title fade-up">CRM<span>顧客関係構築</span></h2>
-  <p class="fade-up fade-delay-1">
-  LINE・メールマガジン・SNSなどを活用した顧客コミュニケーションと、
-  ユーザーインタビューを通じた定性的な顧客理解により、LTVの最大化を支援します。
-</p>
-
-  <img src="assets/img/crm.png" class="fade-up fade-delay-2" />
+<!-- Data & CRM -->
+<section class="section-alt">
+  <div class="section-content">
+    <h2 class="section-title anim-fade-left">Data & CRM<span>データ分析・CRM設計</span></h2>
+    <p class="anim-fade-left delay-1">
+      BigQuery・Looker Studio・Tableauを活用したダッシュボード構築と、
+      GA4・GTMによるユーザー行動分析を実施。<br>
+      会員サービスの設計・改善を通じて、ファンLTVの最大化を支援します。
+    </p>
+  </div>
+  <div class="section-img">
+    <img src="assets/img/crm.png" alt="データ分析・CRM" class="anim-scale-in delay-2" />
+  </div>
 </section>
+
+</div><!-- /services -->
+
+<!-- ===== Wave: white to works ===== -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#bfe6ff"/>
+  </svg>
+</div>
 
 <!-- ===== WORKS ===== -->
 <section id="works">
   <div class="inner">
-    <h2 class="section-title fade-up">WORKS<span>支援実績</span></h2>
-    <p class="fade-up fade-delay-1">
-      小売・EC・エンタメ・サービス業など、多様な業種でのデータ分析・マーケティング支援実績があります。
+    <h2 class="section-title section-title-light anim-fade-up">WORKS<span>支援実績</span></h2>
+    <p class="anim-fade-up delay-1">
+      エンターテインメント領域を中心に、多様な業種でのデータ分析・マーケティング支援実績があります。
     </p>
+    <div class="works-grid anim-stagger">
+      <div class="works-card">
+        <span class="works-card-icon">🎬</span>
+        <h3>アニメ・キャラクターIP</h3>
+        <p>SNS戦略・商品企画・ファンマーケティング</p>
+      </div>
+      <div class="works-card">
+        <span class="works-card-icon">🎤</span>
+        <h3>エンターテインメント企業</h3>
+        <p>事業戦略策定・データ分析基盤構築</p>
+      </div>
+      <div class="works-card">
+        <span class="works-card-icon">🛒</span>
+        <h3>EC・D2Cブランド</h3>
+        <p>CRM設計・ユーザー行動分析・LTV改善</p>
+      </div>
+      <div class="works-card">
+        <span class="works-card-icon">💬</span>
+        <h3>ファンコミュニティ</h3>
+        <p>コミュニティ運営・エンゲージメント施策</p>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- ===== Wave: works to about ===== -->
+<div class="wave-divider" style="background:#6fb3e8;">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,0 L0,40 C480,80 960,0 1440,40 L1440,0 Z" fill="#6fb3e8"/>
+    <path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="#8fc8f2"/>
+  </svg>
+</div>
 
 <!-- ===== ABOUT ===== -->
 <section id="about">
   <div class="inner">
-    <h2 class="section-title fade-up">ABOUT<span>会社概要</span></h2>
+    <h2 class="section-title section-title-light anim-fade-up">ABOUT<span>会社概要</span></h2>
 
-    <p class="about-lead fade-up fade-delay-1">
-      Swiftnessは、<br>データ分析とマーケティングを軸に、
-      企業の意思決定と実行を支援します。
+    <p class="about-lead anim-fade-up delay-1">
+      Swiftnessは、エンターテインメント領域における<br>
+      事業戦略策定から実行まで、一貫したサポートを提供します。<br>
+      経営的視点での戦略と、データ駆動型の施策実行の両立が強みです。
     </p>
 
-    <div class="about-profile fade-up fade-delay-2">
+    <div class="about-profile anim-scale-in delay-2">
       <h3>代表者プロフィール</h3>
-      <p>
-        中野 拳太<br>
-        ベンチャー企業2社で、EC・BtoB・広告・オペレーションの現場を横断的に経験。
-        データと現場をつなぐことを強みに、株式会社Swiftnessを設立。
+      <p style="margin-bottom:20px;">
+        <strong>中野 拳太</strong><br>
+        ベンチャー企業でEC・BtoB・広告・オペレーションの現場を横断的に経験。
+        アニメIPビジネスの企画から制作、20名規模の組織マネジメントまで幅広い実務を経て、
+        データと現場をつなぐことを強みに株式会社Swiftnessを設立。
       </p>
+
+      <h3>経歴</h3>
+      <div class="career-timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">2013 - 2018</span>
+          <div class="timeline-content">
+            <h4>株式会社グライダーアソシエイツ</h4>
+            <p>広告営業・広告運用事業 / チームマネジメント</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2018 - 2019</span>
+          <div class="timeline-content">
+            <h4>Tokyo Otaku Mode Inc.</h4>
+            <p>アニメIPビジネス / コンテンツプロデュース・商品企画</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2021 - 2022</span>
+          <div class="timeline-content">
+            <h4>株式会社Fuego</h4>
+            <p>経営企画 / 事業責任者・DX推進・組織基盤構築</p>
+          </div>
+        </div>
+        <div class="timeline-item active">
+          <span class="timeline-year">2019 - 現在</span>
+          <div class="timeline-content">
+            <h4>株式会社Swiftness</h4>
+            <p>代表取締役 / 事業戦略×データドリブンマーケティング</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>スキル</h3>
+      <div class="skills-container anim-stagger">
+        <span class="skill-tag">ファンマーケティング</span>
+        <span class="skill-tag">SNSマーケティング</span>
+        <span class="skill-tag">コンテンツマーケティング</span>
+        <span class="skill-tag">データ分析</span>
+        <span class="skill-tag">プロジェクトマネジメント</span>
+        <span class="skill-tag">商品開発</span>
+        <span class="skill-tag">事業戦略</span>
+        <span class="skill-tag">エンターテインメント</span>
+        <span class="skill-tag">組織マネジメント</span>
+        <span class="skill-tag">デジタルマーケティング</span>
+      </div>
+
+      <div class="company-info">
+        <h3>会社情報</h3>
+        <table>
+          <tr><th>会社名</th><td>株式会社Swiftness</td></tr>
+          <tr><th>代表</th><td>中野 拳太</td></tr>
+          <tr><th>設立</th><td>2019年10月</td></tr>
+          <tr><th>所在地</th><td>神奈川県</td></tr>
+          <tr><th>事業内容</th><td>エンタメ業界向けデータ分析・マーケティング支援</td></tr>
+        </table>
+      </div>
     </div>
 
-<div class="about-more fade-up fade-delay-3">
-  <a href="https://www.wantedly.com/id/kentee" target="_blank" rel="noopener">
-    中野拳太の詳しいプロフィールはこちら →
-  </a>
-</div>
+    <div class="about-more anim-fade-up delay-3">
+      <a href="https://www.wantedly.com/id/kentee" target="_blank" rel="noopener">
+        中野拳太の詳しいプロフィールはこちら →
+      </a>
+    </div>
 
   </div>
 </section>
 
+<!-- ===== Wave: about to contact ===== -->
+<div class="wave-divider" style="background:#4a93d3;">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,0 L0,40 C480,0 960,80 1440,40 L1440,0 Z" fill="#4a93d3"/>
+    <path d="M0,40 C480,0 960,80 1440,40 L1440,80 L0,80 Z" fill="#6fb3e8"/>
+  </svg>
+</div>
+
 <!-- ===== CONTACT ===== -->
 <section id="contact">
   <div class="inner">
-    <h2 class="section-title fade-up">CONTACT<span>お問い合わせ</span></h2>
-    <p class="fade-up fade-delay-1">
+    <h2 class="section-title section-title-light anim-fade-up">CONTACT<span>お問い合わせ</span></h2>
+    <p class="anim-fade-up delay-1">
       ご相談やお見積もりはメールにてお気軽にご連絡ください。<br>
       <a href="mailto:info@swiftness.jp">info@swiftness.jp</a>
     </p>
@@ -120,13 +255,13 @@
 </section>
 
 
-  <!-- ===== フッター ===== -->
+  <!-- ===== Footer ===== -->
   <footer class="footer">
-    <p>© 2025 Swiftness Inc. All rights reserved.</p>
+    <p>&copy; 2025 Swiftness Inc. All rights reserved.</p>
   </footer>
 
   <script>
-    // モバイルメニュー開閉
+    // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('nav ul');
     menuToggle.addEventListener('click', () => {
@@ -135,18 +270,62 @@
   </script>
 
   <script>
-  const targets = document.querySelectorAll('.fade-up');
+  // Scroll animation observer
+  const animTargets = document.querySelectorAll(
+    '.anim-fade-up, .anim-fade-left, .anim-fade-right, .anim-scale-in, .fade-up'
+  );
 
-  const observer = new IntersectionObserver(entries => {
+  const animObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
+        animObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-  targets.forEach(el => observer.observe(el));
-</script>
+  animTargets.forEach(el => animObserver.observe(el));
+
+  // Stagger animation for container children
+  const staggerContainers = document.querySelectorAll('.anim-stagger');
+
+  const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const children = entry.target.children;
+        Array.from(children).forEach((child, i) => {
+          child.style.transitionDelay = `${i * 0.12}s`;
+          child.classList.add('is-visible');
+        });
+        staggerObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  staggerContainers.forEach(el => staggerObserver.observe(el));
+
+  // Career timeline animation
+  const timeline = document.querySelector('.career-timeline');
+  if (timeline) {
+    const timelineItems = timeline.querySelectorAll('.timeline-item');
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          // Stagger timeline items
+          timelineItems.forEach((item, i) => {
+            setTimeout(() => {
+              item.classList.add('is-visible');
+            }, 300 + i * 200);
+          });
+          timelineObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    timelineObserver.observe(timeline);
+  }
+  </script>
 
 </body>
 </html>
