@@ -245,10 +245,10 @@ nav a:hover { opacity: .6; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 25% 70%, rgba(99,102,241,0.25), transparent),
-    radial-gradient(ellipse 50% 40% at 75% 30%, rgba(236,72,153,0.18), transparent),
-    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(30,136,229,0.12), transparent),
-    linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #1a1a2e 100%);
+    radial-gradient(ellipse 60% 50% at 20% 70%, rgba(30,136,229,0.2), transparent),
+    radial-gradient(ellipse 50% 40% at 80% 25%, rgba(66,165,245,0.15), transparent),
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(100,181,246,0.08), transparent),
+    linear-gradient(135deg, #0a1628 0%, #0f2240 40%, #0d1b33 100%);
   z-index: 0;
 }
 
@@ -258,10 +258,26 @@ nav a:hover { opacity: .6; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 30% 40%, rgba(99,102,241,0.2) 0%, transparent 50%),
-    radial-gradient(circle at 70% 60%, rgba(236,72,153,0.15) 0%, transparent 50%),
-    radial-gradient(circle at 50% 80%, rgba(30,136,229,0.1) 0%, transparent 40%);
+    radial-gradient(circle at 30% 40%, rgba(30,136,229,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 70% 55%, rgba(66,165,245,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(100,181,246,0.08) 0%, transparent 40%);
   z-index: 1;
+}
+
+/* SVG background layer */
+.hero-bg-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg-svg svg {
+  width: 100%;
+  height: 100%;
 }
 
 /* Hero text */
@@ -321,6 +337,9 @@ nav a:hover { opacity: .6; }
   .hero{min-height:85vh;}
   .hero h1{font-size:1.8rem;}
   .hero h1 br{display:inline;}
+  .hero-bg-svg svg {
+    transform: scale(1.8);
+  }
 }
 
 /* ===============================
